@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted Access');
     <?php echo $this->sidebar; ?>
 	</div>
 	<div id="j-main-container" class="span10">
-	<h1>Member Balances as at 30th Nov 2018</h1>
+	<h1>Member Balances as at 30th Nov 2021</h1>
 	<table class="table table-striped table-hover">
 		<thead>
 		<tr>
@@ -51,7 +51,7 @@ defined('_JEXEC') or die('Restricted Access');
 		<tbody>
 			<?php if (!empty($this->items)) : ?>
 				<?php foreach ($this->items as $i => $row) :
-					$link = JRoute::_('index.php?option=com_reference&task=memberrate.edit&id=' . $row->id);
+				$link = JRoute::_('index.php?option=com_reference&task=memberrate.edit&MemberID=' . $row->MemberID);
 				?>
 					<tr>
 						  

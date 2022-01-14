@@ -31,7 +31,7 @@ class AuditReportsModelMemberBalances extends JModelList
  
 		// Create the base select statement.
 		$query->select('m.MemberID, MemberFirstname,  MemberSurname, MemberType,MemberLeaveofAbsence');
-		$query->select('(select sum(f.Amount) from finances as f where MemberID = m.MemberID and TransactionDate < \'2017-12-01\') as MemberAmount');
+		$query->select('(select sum(f.Amount) from finances as f where f.MemberID = m.MemberID and TransactionDate < \'2021-12-01\') as MemberAmount');
         $query->from('members AS m');
         //$query->group('MemberType');
         //$query->where('f.TransactionDate < \'2017-12-01\'');
