@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted Access');
     <?php echo $this->sidebar; ?>
 	</div>
 	<div id="j-main-container" class="span10">
-	<h1>Members and Family member movements since 1st Dec 2017</h1>
+	<h1>Members and Family member movements since 1st Dec 2020</h1>
 	<h2>Members Joined</h2>
 	<table class="table table-striped table-hover">
 		<thead>

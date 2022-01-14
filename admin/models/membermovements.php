@@ -32,7 +32,7 @@ class AuditReportsModelMemberMovements extends JModelList
 		// Create the base select statement.
 		$query->select('MemberID, MemberFirstname, MemberSurname,MemberType, MemberJoiningDate,date_format(MemberJoiningDate,\'%d %M %Y\') as joindate');
         $query->from('members AS m');
-        $query->where('MemberJoiningDate > \'2017-11-30\''); // add code to automatically calculate this.
+        $query->where('MemberJoiningDate > \'2020-11-30\''); // add code to automatically calculate this.
         $query->orderby('MemberJoiningDate');
         //$query->leftJoin('apsschools AS s ON v.schoolid = s.id');               
         //$query
@@ -51,7 +51,7 @@ class AuditReportsModelMemberMovements extends JModelList
 		// Create the base select statement.
 		$query->select('MemberID, MemberFirstname, MemberSurname,MemberType, MemberDepartureDate,date_format(MemberDepartureDate,\'%d %M %Y\') as departdate');
 		$query->from('members AS m');
-		$query->where('MemberDepartureDate > \'2017-11-30\''); // add code to automatically calculate this.
+		$query->where('MemberDepartureDate > \'2020-11-30\''); // add code to automatically calculate this.
 		$query->orderby('MemberDepartureDate');
 		
 		$db->setQuery($query);
@@ -68,7 +68,7 @@ class AuditReportsModelMemberMovements extends JModelList
 		$query = $db->getQuery(true);
 		$query->select('FamilyMemberFirstname, FamilyMemberSurname, FamilyMembershipType, FamilyMemberJoinDate,date_format(FamilyMemberJoinDate,\'%d %M %Y\') as joindate');
 		$query->from('familymembers  AS f');
-		$query->where('FamilyMemberJoinDate > \'2017-11-30\''); // add code to automatically calculate this.
+		$query->where('FamilyMemberJoinDate > \'2020-11-30\''); // add code to automatically calculate this.
 		$query->orderby('FamilyMemberJoinDate');
 		
 		$db->setQuery($query);
@@ -86,7 +86,7 @@ class AuditReportsModelMemberMovements extends JModelList
 		$query = $db->getQuery(true);
 		$query->select('FamilyMemberFirstname, FamilyMemberSurname, FamilyMembershipType, FamilyMemberDepartureDate,date_format(FamilyMemberDepartureDate,\'%d %M %Y\') as departdate');
 		$query->from('familymembers  AS f');
-		$query->where('FamilyMemberDepartureDate > \'2017-11-30\''); // add code to automatically calculate this.
+		$query->where('FamilyMemberDepartureDate > \'2020-11-30\''); // add code to automatically calculate this.
 		$query->orderby('FamilyMemberDepartureDate');
 		
 		$db->setQuery($query);

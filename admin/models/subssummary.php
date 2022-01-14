@@ -19,7 +19,7 @@ class AuditReportsModelSubsSummary extends JModelList
     
 	// global variables to be updated as an input value
 	
-	protected $year = 2017;
+	protected $year = 2020;
     
 	/**
 	 * Method to build an SQL query to load the list data.
@@ -36,7 +36,7 @@ class AuditReportsModelSubsSummary extends JModelList
 		$query->select('s.*,osc.*');
         $query->from('subssummary as s');
         $query->leftJoin('oscmemberrates AS osc ON osc.year = s.year');
-        $query->where('s.year = \'2018\'');  // add code to parameterise this
+        $query->where('s.year = \'2021\'');  // add code to parameterise this
         
 		return $query;
 	}
@@ -48,7 +48,7 @@ class AuditReportsModelSubsSummary extends JModelList
 		$query = $db->getQuery(true);
 		$query->select('*');
 		$query->from('oscmemberrates');
-		$query->where('Year = 2018');
+		$query->where('Year = 2020');
 		
 		$db->setQuery($query);
 		$itemcount = $db->loadObjectList();
