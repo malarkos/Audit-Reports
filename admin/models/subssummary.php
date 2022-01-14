@@ -36,7 +36,7 @@ class AuditReportsModelSubsSummary extends JModelList
 		$query->select('s.*,osc.*');
         $query->from('subssummary as s');
         $query->leftJoin('oscmemberrates AS osc ON osc.year = s.year');
-        $query->where('s.year = \'2017\'');  // add code to parameterise this
+        $query->where('s.year = \'2018\'');  // add code to parameterise this
         
 		return $query;
 	}
@@ -46,10 +46,9 @@ class AuditReportsModelSubsSummary extends JModelList
 		// Initialize variables.
 		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true);
-		//select * from oscmemberrates where year = '2016'
 		$query->select('*');
 		$query->from('oscmemberrates');
-		$query->where('Year = 2017');
+		$query->where('Year = 2018');
 		
 		$db->setQuery($query);
 		$itemcount = $db->loadObjectList();

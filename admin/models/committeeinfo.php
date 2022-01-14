@@ -35,7 +35,7 @@ class AuditReportsModelCommitteeInfo extends JModelList
 		$query->leftJoin('members AS m ON bs.memid = m.MemberID');
         //$query->group('MemberType');
         $query->where('bookingstatus in (\'Submitted\',\'Approved\',\'Confirmed\')');
-        $query->where('bookingref like \'2017%\'');
+        $query->where('bookingref like \'2018%\'');
         $query->orderby('bookid');
         		
 		return $query;
@@ -64,7 +64,7 @@ class AuditReportsModelCommitteeInfo extends JModelList
 		
 		$query->select ( '*' );
 		$query->from ( 'osccommittee' );
-		$query->where ( 'Year = \'2017\'');
+		$query->where ( 'Year = \'2018\'');
 		
 		
 		$db->setQuery ( $query );
@@ -88,7 +88,7 @@ class AuditReportsModelCommitteeInfo extends JModelList
 			$query->select ( 'sum(amount) ' );
 			$query->from ( 'finances' );
 			$query->where ( 'MemberID = '.$memid );
-			$query->where($db->quoteName('TransactionDate').' = '.$db->quote('2016-12-12'));
+			$query->where($db->quoteName('TransactionDate').' = '.$db->quote('2017-12-12'));
 			//$query->where($db->quoteName('TransactionDate').' < '.$db->quote('2017-04-01'));
 			$query->where($db->quoteName('CreditDebit').' = '.$db->quote('D'));
 			$db->setQuery ( $query );
@@ -103,7 +103,7 @@ class AuditReportsModelCommitteeInfo extends JModelList
 			$query->select ( 'sum(bookingcost) as bookingtotal,count(*) as bookingcount ' );
 			$query->from ( 'booking_summary' );
 			$query->where ( 'memid = '.$memid );
-			$query->where($db->quoteName('bookingref').' LIKE '.$db->quote('2017%'));
+			$query->where($db->quoteName('bookingref').' LIKE '.$db->quote('2018%'));
 			$query->where($db->quoteName('bookingstatus').' = '.$db->quote('Confirmed'));
 			
 			$db->setQuery ( $query );

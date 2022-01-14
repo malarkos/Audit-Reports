@@ -35,7 +35,7 @@ class AuditReportsModelMemberBookings extends JModelList
 		$query->leftJoin('members AS m ON bs.memid = m.MemberID');
         //$query->group('MemberType');
         $query->where('bookingstatus in (\'Submitted\',\'Approved\',\'Confirmed\')');
-        $query->where('bookingref like \'2017%\'');
+        $query->where('bookingref like \'2018%\'');
         $query->orderby('bookid');
         		
 		return $query;
